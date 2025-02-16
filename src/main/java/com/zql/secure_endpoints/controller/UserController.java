@@ -17,6 +17,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
@@ -62,6 +64,12 @@ public class UserController {
     @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     public User getUser(@PathVariable Long id) {
         return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     @PutMapping("/{id}")
