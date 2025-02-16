@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "f0bb3b93-cbd3-420f-b809-448994a2f03c",
+		"name": "Secure Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37384695"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "addRole",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTY5MjIxOCwiZXhwIjoxNzM5NzI4MjE4fQ.a5mKzfVb1bGQ8ewItI7L63-h81o6T5nS7i3d4oVyrgw"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ROLE_MANAGER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/roles"
+			},
+			"response": []
+		},
+		{
+			"name": "GetRoles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTY5MjIxOCwiZXhwIjoxNzM5NzI4MjE4fQ.a5mKzfVb1bGQ8ewItI7L63-h81o6T5nS7i3d4oVyrgw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/roles"
+			},
+			"response": []
+		},
+		{
+			"name": "getUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTY5MjIxOCwiZXhwIjoxNzM5NzI4MjE4fQ.a5mKzfVb1bGQ8ewItI7L63-h81o6T5nS7i3d4oVyrgw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "registerUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTY5MjIxOCwiZXhwIjoxNzM5NzI4MjE4fQ.a5mKzfVb1bGQ8ewItI7L63-h81o6T5nS7i3d4oVyrgw"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"manager\",\r\n    \"password\": \"Manager@123\",\r\n    \"email\": \"manager@example.com\",\r\n    \"role\": {\r\n        \"name\": \"ROLE_MANAGER\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getAllDummies",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add dump data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwiaWF0IjoxNzM5Njk4NDQzLCJleHAiOjE3Mzk3MzQ0NDN9.vtxTBa1omzvtTM8vSAj5jfSBgNtHMCDrqS2I0RgzkXI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"hum! So bump that I do not know how to proceed from now, yeah yeah ah! espera! funcionou!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/dump"
+			},
+			"response": []
+		},
+		{
+			"name": "updateDump",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW5hZ2VyIiwiaWF0IjoxNzM5Njk4OTA2LCJleHAiOjE3Mzk3MzQ5MDZ9.KeeOlGMEmCO8c6B3VCP7mmv5O7GMo5lxBDyC7I_x4_Q"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"escrve-se qualquer coisa poder ser chines, русский или как вам удобно!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/dump/2"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteDump",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTY5OTE0MCwiZXhwIjoxNzM5NzM1MTQwfQ.ApNfifVKamlTNBUuDNQuLq_T75ATpJ5XVT4tmDBldPU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/dump/2"
+			},
+			"response": []
+		}
+	]
+}
